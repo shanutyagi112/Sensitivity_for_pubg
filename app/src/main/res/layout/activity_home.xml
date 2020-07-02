@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:ignore="ContentDescription"
+    android:background="#0A0D16"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scroll1"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image3"
+        tools:ignore="UselessParent">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/linerar1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/phone_button" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/player_button" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/button3"
+                android:background="@drawable/control" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/button4"
+                android:background="@drawable/character" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/button5"
+                android:background="@drawable/about" />
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:id="@+id/welcom"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linerar2"
+        android:text="Controls And Sensitivity"
+        android:textColor="#fff"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#FFFFFF"
+        android:layout_marginTop="7dp"
+        android:layout_below="@id/linerar2"
+        android:id="@+id/image3"
+        android:orientation="horizontal" />
+
+</RelativeLayout>

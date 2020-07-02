@@ -1,0 +1,21 @@
+<resources>
+
+
+    <string name="app_name">Sensitivity Settings</string>
+    <string name="aboutpage">This app Includes Sensitivity Settings, Control Layouts,
+        and Character ID Of Popular Streamers. This App is Just to Provide
+        a Little Help on your way to being a Good Player. The Data in this App was taken
+        at the time of Development. In Case If any Streamer Will change his/her Settings
+        I will reupdate the Data ASAP If You Guys will Keep Supporting us Then we will Provide
+        Latest Updates and Tricks evr regularly.\n
+        If any player changes his sensitivity, we will try to upadate quickly.\n
+        Sensitivity Credit goes to -;\n
+        All popular Streamers
+
+
+    </string>
+
+    <string name="app_names">Sensitivity Settings</string>
+    <string name="aboutpages">  </string>
+
+</resources>
