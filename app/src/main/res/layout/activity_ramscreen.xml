@@ -14,7 +14,8 @@
       android:layout_width="match_parent"
       android:id="@+id/recyclerView"
       android:background="#FFFFFF"
-      android:layout_marginTop="65dp"
+
+      android:layout_below="@+id/ram"
       android:layout_marginBottom="55dp"
       android:layout_height="match_parent" >
 
@@ -32,13 +33,20 @@
       android:id="@+id/ram"
       android:layout_height="wrap_content"
       android:gravity="center"
+      android:layout_marginTop="5dp"
       tools:ignore="MissingConstraints">
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/phonesensitivity"
-        tools:ignore="MissingConstraints" />
+        android:text="    Phone Sensitivity    "
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:background="@drawable/outline"
+        android:layout_marginLeft="3dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="3dp" />
   </LinearLayout>
 
   <com.google.android.gms.ads.AdView
@@ -49,8 +57,8 @@
       android:layout_centerHorizontal="true"
       android:layout_alignParentBottom="true"
       ads:adSize="BANNER"
-      ads:adUnitId="ca-app-pub-2715877056545900/7292954208">
+      ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
   </com.google.android.gms.ads.AdView>
 
 
-  </RelativeLayout>
+</RelativeLayout>

@@ -9,13 +9,15 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
 
     //variable
     Animation topAnim, bottomAnim;
-    ImageView imagedown , imageup;
+    ImageView  imageup;
+    LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Hooks
         imageup = findViewById(R.id.upimage);
-        imagedown = findViewById(R.id.downimage);
+        linearLayout = findViewById(R.id.seliner);
 
 
         imageup.setAnimation(topAnim);
-        imagedown.setAnimation(bottomAnim);
+        linearLayout.setAnimation(bottomAnim);
 
 
 

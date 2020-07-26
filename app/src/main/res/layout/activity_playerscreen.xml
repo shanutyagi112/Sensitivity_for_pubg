@@ -31,6 +31,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
             android:background="@drawable/search"
 
@@ -40,13 +41,12 @@
     <EditText
         android:id="@+id/txt_search"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:background="#FFFFFF"
         android:textSize="22sp"
+        android:background="#FFFFFF"
         android:layout_margin="5dp"
-        android:hint="Search Player Sensitivity"
+        android:hint="   Search Player Sensitivity"
         android:layout_marginStart="10dp" />
 
     </LinearLayout>
@@ -59,13 +59,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/player"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:layout_height="wrap_content" >
 
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ps"
+            android:text="    Player Sensitivity    "
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:background="@drawable/outline"
             android:layout_marginLeft="3dp"
             tools:ignore="MissingConstraints"
             android:layout_marginStart="3dp" />
@@ -80,8 +85,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2715877056545900/3853147506">
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
-
 
 </RelativeLayout>

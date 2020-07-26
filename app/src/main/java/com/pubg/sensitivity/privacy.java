@@ -17,7 +17,7 @@ public class privacy extends AppCompatActivity {
         setContentView(R.layout.activity_privacy);
 
 
-        String url = "file:///android_asset/privicy.html";
+        String url = "https://docs.google.com/document/d/1rE9HkLOqDdz5Jfx7mZHRDATlK4xs6FcIRXFhQZSMpUY/edit?usp=sharing";
         WebView view = (WebView) this.findViewById(R.id.web);
         view.getSettings().setJavaScriptEnabled(true);
         view.loadUrl(url);

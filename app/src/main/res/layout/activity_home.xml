@@ -5,8 +5,19 @@
     android:layout_width="match_parent"
     tools:ignore="ContentDescription"
     android:background="#0A0D16"
+
     android:layout_height="match_parent"
     tools:context=".Home">
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/home">
+
+
+
 
 
 
@@ -30,37 +41,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button1"
-                android:layout_marginTop="10dp"
+                android:text="  Phone  According  \n Sensitivity"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#AC9E20"
+                android:textSize="22sp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/phone_button" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
-                android:layout_marginTop="5dp"
+                android:text="      Best  Player      \n Sensitivity"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#AC9E20"
+                android:textSize="23sp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/player_button" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
+                android:text="     Best  Control     \n Screenshots"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#AC9E20"
+                android:textSize="23sp"
                 android:id="@+id/button3"
-                android:background="@drawable/control" />
+                android:background="@drawable/control_button" />
 
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
+                android:text="  Player  Character  \n ID"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#AC9E20"
+                android:textSize="22sp"
                 android:id="@+id/button4"
-                android:background="@drawable/character" />
+                android:background="@drawable/character_button" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
+                android:text="           About           "
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#AC9E20"
+                android:textSize="24sp"
                 android:id="@+id/button5"
-                android:background="@drawable/about" />
+                android:background="@drawable/about_button" />
 
 
 
@@ -115,5 +151,83 @@
         android:layout_below="@id/linerar2"
         android:id="@+id/image3"
         android:orientation="horizontal" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/netcheck"
+        android:gravity="center_horizontal"
+        android:background="@color/browser_actions_bg_grey"
+        android:layout_height="match_parent">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+
+            android:id="@+id/wifimage"
+            android:src="@drawable/wifi_image"
+
+            />
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/wifimage"
+            android:text="Please Check Your Internet \nConnection"
+            android:textColor="#5860CC"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tryagain"
+                android:text="  Try Again  "
+                android:textAllCaps="false"
+                android:id="@+id/tryagain"
+                android:gravity="center_horizontal"
+                android:textColor="#fff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

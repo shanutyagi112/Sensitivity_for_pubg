@@ -7,17 +7,15 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import jp.wasabeef.recyclerview.animators.adapters.AlphaInAnimationAdapter;
 
 public class RecyclerAdpater extends RecyclerView.Adapter<RecyclerAdpater.ViewHolder> {
 
@@ -56,9 +54,9 @@ public class RecyclerAdpater extends RecyclerView.Adapter<RecyclerAdpater.ViewHo
 
         //imageview
 
-        Glide.with(mContext)
-                .load(playlist.get(position).getImage())
+        Picasso.get().load(playlist.get(position).getImage())
                 .into(holder.imageView);
+
 
 
 

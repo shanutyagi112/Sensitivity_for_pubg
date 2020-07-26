@@ -7,15 +7,26 @@
         a Little Help on your way to being a Good Player. The Data in this App was taken
         at the time of Development. In Case If any Streamer Will change his/her Settings
         I will reupdate the Data ASAP If You Guys will Keep Supporting us Then we will Provide
-        Latest Updates and Tricks evr regularly.\n
+        Latest Updates and Tricks regularly.\n
         If any player changes his sensitivity, we will try to upadate quickly.\n
         Sensitivity Credit goes to -;\n
-        All popular Streamers
-
+        All popular Streamers\n
+        \n
+      <font size="36"> <font fgcolor="#FFFF0000"> DISCLAIMER:\n</font></font>
+       This is an UNOFFICIAL application for PUBG, TENCENT or LIGHTSPEED. This application is not associated in
+        any way with PUBG Corporation. All rights reserved. In accordance with
 
     </string>
 
+
     <string name="app_names">Sensitivity Settings</string>
     <string name="aboutpages">  </string>
+    <string name="link"><a href="https://developer.pubg.com/tos?locale=en">https://developer.pubg.com/tos?locale=en</a></string>
+    <string name="continous">“PUBG, PUBG mobile, PLAYERUNKNOWN’S BATTLEGROUNDS and All trademarked names and images
+        are only used as references and we do not intend to violate or take ownership of these names and images..\n
+      If you feel that we have violated your intellectual property rights or any other agreement,
+        please contact us by e-mail   shanutyagi181@gmail.com , we will immediately take the necessary measures.\n
+    </string>
+
 
 </resources>

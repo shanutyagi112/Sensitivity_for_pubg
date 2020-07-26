@@ -1,29 +1,15 @@
 package com.pubg.sensitivity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Message;
-import android.provider.ContactsContract;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.SearchView;
-
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -37,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.unity3d.ads.IUnityAdsListener;
+import com.unity3d.ads.UnityAds;
 
 import java.util.ArrayList;
 
@@ -48,6 +36,9 @@ public class playerscreen extends AppCompatActivity {
     //firebase
     private DatabaseReference myref;
     private EditText txt_Search;
+    String unityGameID = "3587723";
+    Boolean testMode = false;
+    private String interstitialAdPlacement = "playerinterstial";
 
     // Variables
     private ArrayList<play> playList;
@@ -59,6 +50,61 @@ public class playerscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playerscreen);
+
+
+        UnityAds.initialize(playerscreen.this,unityGameID,testMode);
+        IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
+            @Override
+            public void onUnityAdsReady(String s) {
+
+            }
+
+            @Override
+            public void onUnityAdsStart(String s) {
+
+            }
+
+            @Override
+            public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
+
+            }
+
+            @Override
+            public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
+
+            }
+        };
+
+        UnityAds.setListener(unityAdsListener);
+        if (UnityAds.isInitialized()){
+            UnityAds.load(interstitialAdPlacement);
+
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    DisplayInterstitialAd();
+                }
+            },500);
+        }else {
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    UnityAds.load(interstitialAdPlacement);
+
+
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            DisplayInterstitialAd();
+                        }
+                    },500);
+                }
+            },500);
+        }
+
 
         recyclerView = findViewById(R.id.recyclerView);
         txt_Search= (EditText)findViewById(R.id.txt_search);
@@ -209,6 +255,12 @@ public class playerscreen extends AppCompatActivity {
         }
 
         playList = new ArrayList<>();
+    }
+
+    private  void DisplayInterstitialAd () {
+        if (UnityAds.isReady(interstitialAdPlacement)) {
+            UnityAds.show(playerscreen.this, interstitialAdPlacement);
+        }
     }
 
 }

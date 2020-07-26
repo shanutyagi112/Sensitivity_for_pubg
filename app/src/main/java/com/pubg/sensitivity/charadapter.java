@@ -4,22 +4,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class charadapter extends  RecyclerView.Adapter<charadapter.ViewHolder> {
 
@@ -56,6 +49,9 @@ public class charadapter extends  RecyclerView.Adapter<charadapter.ViewHolder> {
         //textview
         holder.textView.setText(charactlist.get(position).getPlayer());
         holder.textView1.setText(charactlist.get(position).getCharacter());
+        holder.search.setText(charactlist.get(position).getSearch());
+
+
         Animation animation = AnimationUtils.loadAnimation(mContext,
                 (position > lastPosition) ? R.anim.up_from_bottom
                         : R.anim.down_from_top);
@@ -77,7 +73,7 @@ public class charadapter extends  RecyclerView.Adapter<charadapter.ViewHolder> {
     public static class  ViewHolder extends  RecyclerView.ViewHolder{
         //widget
 
-        TextView textView ,textView1;
+        TextView textView ,textView1, search;
 
 
 
@@ -91,6 +87,7 @@ public class charadapter extends  RecyclerView.Adapter<charadapter.ViewHolder> {
 
 
             textView = itemView.findViewById(R.id.textview);
+            search = itemView.findViewById(R.id.search);
             textView1 = itemView.findViewById(R.id.textview1);
 
 

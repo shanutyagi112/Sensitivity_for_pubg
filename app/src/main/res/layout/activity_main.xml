@@ -17,26 +17,50 @@
 
 
         <ImageView
-            android:layout_width="250dp"
+            android:layout_width="230dp"
             android:id="@+id/upimage"
-            android:layout_height="190dp"
-            android:background="@drawable/sen" />
+            android:layout_height="230dp"
+            android:background="@drawable/log" />
 
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
+        android:id="@+id/seliner"
         android:layout_marginBottom="10dp"
+      android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical"
         tools:ignore="MissingConstraints,UselessParent">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/downimage"
-        android:background="@drawable/cred" />
+        <TextView
+            android:id="@+id/downimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensitivity"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="#F2A902"
+            android:textSize="38sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#F2A902" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Created by = ShanuEkku"
+            android:textColor="#F2A902"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            android:textSize="12sp"/>
+
+
     </LinearLayout>
 
 </RelativeLayout>

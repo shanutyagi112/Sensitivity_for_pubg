@@ -7,124 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".control">
 
-    <ScrollView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="60dp"
-            android:orientation="vertical">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/threefinger" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/threef" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/fourfinger" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/fourf" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/foure" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/fivefinger" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/five" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/triggerlayout" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/trigger" />
+        android:id="@+id/recyclerView"
+        android:layout_below="@+id/characterscreen"
+        android:background="#00FFFFFF"
+        android:layout_marginBottom="55dp"
+        android:layout_height="match_parent" >
 
 
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/tabletfinger" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="120dp"
-                android:scaleType="fitStart"
-                app:srcCompat="@drawable/tab" />
+    </androidx.recyclerview.widget.RecyclerView>
 
 
-        </LinearLayout>
-    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/characterscreen"
+        android:layout_marginTop="5dp"
+        android:background="#ffff"
         android:layout_height="wrap_content"
         android:gravity="center">
 
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/cs"
-            tools:ignore="MissingConstraints" />
+            android:text="    Control Screenshot    "
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:background="@drawable/outline"
+            android:layout_marginLeft="3dp"
+            tools:ignore="MissingConstraints"
+            android:layout_marginStart="3dp" />
     </LinearLayout>
 
     <com.google.android.gms.ads.AdView
@@ -135,7 +51,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2715877056545900/3476804609">
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.pubg.sensitivity">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"
+        tools:node="remove" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/newlog_squar"
         android:label="@string/app_name"
-        android:largeHeap="true"
         android:roundIcon="@mipmap/newlog_circle"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity2"></activity>
+        <activity android:name=".Description"></activity>
         <activity android:name=".privacy" />
         <activity android:name=".aboutscreen" />
         <activity android:name=".characterscreen" />
@@ -32,7 +35,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2715877056545900~9544340348" />
+            android:value="ca-app-pub-8023000625126549~1970135835" />
     </application>
 
 </manifest>
