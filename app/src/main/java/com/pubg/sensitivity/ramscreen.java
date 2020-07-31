@@ -15,8 +15,6 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.unity3d.ads.IUnityAdsListener;
-import com.unity3d.ads.UnityAds;
 
 
 import com.google.firebase.database.DataSnapshot;
@@ -34,9 +32,6 @@ public class ramscreen extends AppCompatActivity {
     RecyclerView recyclerView;
     //firebase
     private DatabaseReference myref;
-     String unityGameID = "3587723";
-    Boolean testMode = false;
-    private String interstitialAdPlacement = "phoneinterstial";
 
 
     // Variables
@@ -50,59 +45,6 @@ public class ramscreen extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ramscreen);
-        UnityAds.initialize(ramscreen.this,unityGameID,testMode);
-        IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
-            @Override
-            public void onUnityAdsReady(String s) {
-
-            }
-
-            @Override
-            public void onUnityAdsStart(String s) {
-
-            }
-
-            @Override
-            public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-
-            }
-
-            @Override
-            public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-            }
-        };
-
-        UnityAds.setListener(unityAdsListener);
-        if (UnityAds.isInitialized()){
-            UnityAds.load(interstitialAdPlacement);
-            DisplayInterstitialAd();
-
-
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    DisplayInterstitialAd();
-                }
-            },900);
-        }else {
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    UnityAds.load(interstitialAdPlacement);
-
-
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            DisplayInterstitialAd();
-                        }
-                    },1000);
-                }
-            },1000);
-        }
 
         recyclerView = findViewById(R.id.recyclerView);
         //unity banner ad
@@ -229,11 +171,6 @@ public class ramscreen extends AppCompatActivity {
         }
 
         playList = new ArrayList<>();
-    }
-    private  void DisplayInterstitialAd (){
-        if (UnityAds.isReady(interstitialAdPlacement)){
-            UnityAds.show(ramscreen.this,interstitialAdPlacement);
-        }
     }
 
 }

@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class aboutscreen extends AppCompatActivity {
 
-    RelativeLayout raterelative, feedback, privacy, description;
+    RelativeLayout raterelative, feedback, privacy, description, share;
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -33,6 +33,7 @@ public class aboutscreen extends AppCompatActivity {
         raterelative = findViewById(R.id.raterelative);
          feedback = findViewById(R.id.feedback);
          privacy = findViewById(R.id.privacy);
+         share = findViewById(R.id.Share);
          description = findViewById(R.id.description);
 
          try {
@@ -107,6 +108,47 @@ public class aboutscreen extends AppCompatActivity {
             }
         });
 
+
+
+        share.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    v.getBackground().setColorFilter(new LightingColorFilter(0xFFFFFFFF, 0xFF3D7CE6));
+
+                }
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+
+                    v.getBackground().setColorFilter(new LightingColorFilter(0xFFFFFFFF, 000000000));
+
+                }
+
+
+                return false;
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+                    String shareMessage= "\nShare the best Sensitivity \n\n";
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "choose one"));
+                } catch(Exception e) {
+                    //e.toString();
+                }
+
+
+            }
+        });
 
 
 

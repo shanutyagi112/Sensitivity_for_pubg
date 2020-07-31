@@ -22,8 +22,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.unity3d.ads.IUnityAdsListener;
-import com.unity3d.ads.UnityAds;
 
 import java.util.ArrayList;
 
@@ -36,9 +34,6 @@ public class control extends AppCompatActivity {
     private ArrayList<play> playList;
     private RecyclerAdpater recyclerAdpater;
     private AdView mAdView;
-    String unityGameID = "3587723";
-    Boolean testMode = false;
-    private String interstitialAdPlacement = "controlinterstial";
 
 
 
@@ -47,58 +42,6 @@ public class control extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
 
-        UnityAds.initialize(control.this,unityGameID,testMode);
-        IUnityAdsListener unityAdsListener = new IUnityAdsListener() {
-            @Override
-            public void onUnityAdsReady(String s) {
-
-            }
-
-            @Override
-            public void onUnityAdsStart(String s) {
-
-            }
-
-            @Override
-            public void onUnityAdsFinish(String s, UnityAds.FinishState finishState) {
-
-            }
-
-            @Override
-            public void onUnityAdsError(UnityAds.UnityAdsError unityAdsError, String s) {
-
-            }
-        };
-
-        UnityAds.setListener(unityAdsListener);
-        if (UnityAds.isInitialized()){
-            UnityAds.load(interstitialAdPlacement);
-
-
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    DisplayInterstitialAd();
-                }
-            },500);
-        }else {
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    UnityAds.load(interstitialAdPlacement);
-
-
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            DisplayInterstitialAd();
-                        }
-                    },500);
-                }
-            },500);
-        }
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -210,11 +153,6 @@ public class control extends AppCompatActivity {
         }
 
         playList = new ArrayList<>();
-    }
-    private  void DisplayInterstitialAd () {
-        if (UnityAds.isReady(interstitialAdPlacement)) {
-            UnityAds.show(control.this, interstitialAdPlacement);
-        }
     }
 
 }
